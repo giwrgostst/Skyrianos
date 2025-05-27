@@ -50,27 +50,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const beaches = [
     {
       title: 'Molos',
-      img: 'images/Skyros/beaches/molos.png',
+      img: 'images/beaches/molos.png',
       desc: 'A long, organized beach near the town, perfect for swimming and sunbathing.'
     },
     {
       title: 'Atsitsa',
-      img: 'images/Skyros/beaches/atsitsa.png',
+      img: 'images/beaches/atsitsa.png',
       desc: 'A lush green beach with turquoise waters and pine trees reaching the sea.'
     },
     {
       title: 'Kalamitsa',
-      img: 'images/Skyros/beaches/kalamitsa.png',
+      img: 'images/beaches/kalamitsa.png',
       desc: 'A peaceful sandy beach ideal for families and calm swimming.'
     },
     {
       title: 'Agalipa',
-      img: 'images/Skyros/beaches/agalipa.png',
+      img: 'images/beaches/agalipa.png',
       desc: 'A hidden gem only accessible by boat, with crystal clear water.'
     },
     {
       title: 'Pefko',
-      img: 'images/Skyros/beaches/pefko.png',
+      img: 'images/beaches/pefko.png',
       desc: 'A secluded beach surrounded by rocks and nature, perfect for relaxing.'
     }
   ];
@@ -135,42 +135,42 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- SIGHTS LOGIC ---
   const sights = [
     {
-      image: 'images/Skyros/sights/17.png',
+      image: 'images/sights/17.png',
       title: 'Monastery of Agios Georgios & Byzantine Castle',
       description: 'A stunning hilltop monastery built in the 10th century offering panoramic views and deep religious heritage.'
     },
     {
-      image: 'images/Skyros/sights/18.png',
+      image: 'images/sights/18.png',
       title: 'Brooke Square',
       description: 'Commemorates Rupert Brooke with a statue surrounded by whitewashed houses and island charm.'
     },
     {
-      image: 'images/Skyros/sights/24.png',
+      image: 'images/sights/24.png',
       title: 'Chora',
       description: 'The capital village of Skyros, full of winding alleys, traditional houses, and vibrant local life.'
     },
     {
-      image: 'images/Skyros/sights/20.png',
+      image: 'images/sights/20.png',
       title: 'Traditional Skyrian House',
       description: 'Step into a preserved 19th-century Skyrian house and experience authentic island living.'
     },
     {
-      image: 'images/Skyros/sights/19.png',
+      image: 'images/sights/19.png',
       title: 'Agios Nikolaos',
       description: 'A peaceful beach chapel by the sea offering a serene spiritual escape.'
     },
     {
-      image: 'images/Skyros/sights/25.png',
+      image: 'images/sights/25.png',
       title: 'Skyrian Horse',
       description: 'A rare breed of miniature horse native to Skyros, known for its beauty and historical significance.'
     },
     {
-      image: 'images/Skyros/sights/28.png',
+      image: 'images/sights/28.png',
       title: 'Archaeological Site of Palamari',
       description: 'An early Bronze Age settlement revealing Skyros’ ancient urban structure.'
     },
     {
-      image: 'images/Skyros/sights/29.png',
+      image: 'images/sights/29.png',
       title: 'Sea Caves',
       description: 'Natural sea caves carved into the island’s rugged coast, perfect for exploration by boat.'
     }
@@ -240,27 +240,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const foodData = [
     {
-      img: 'images/Skyros/food/16.png',
+      img: 'images/food/16.png',
       title: 'Slow Cooked Lamb with Potatoes',
       desc: 'Traditional Skyros dish with a wonderful lemon aroma, cooked with potatoes in the oven or pot.'
     },
     {
-      img: 'images/Skyros/food/15.png',
+      img: 'images/food/15.png',
       title: 'Lobster Pasta',
       desc: 'Local gourmet dish with fresh lobster and prawns, ideal for a summer meal by the sea.'
     },
     {
-      img: 'images/Skyros/food/14.png',
+      img: 'images/food/14.png',
       title: 'Ladopita with Xinotyri and Honey',
       desc: 'Sweet pie with local sour cheese, olive oil, and honey — a rare traditional combination.'
     },
     {
-      img: 'images/Skyros/food/12.png',
+      img: 'images/food/12.png',
       title: 'Teroptaria',
       desc: 'Small cheese pies with traditional flavor, filled with local cheese and trachana.'
     },
     {
-      img: 'images/Skyros/food/13.png',
+      img: 'images/food/13.png',
       title: 'Marmarites',
       desc: 'Delicious fried pies filled with sweet pumpkin — an old traditional dessert.'
     }
@@ -388,11 +388,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// === 4. CURSOR REPEL ===
+// === 4. CURSOR REPEL (excluding popup images) ===
 document.addEventListener('mousemove', (e) => {
   const elements = document.querySelectorAll('body *');
 
   elements.forEach(el => {
+    // Skip if element is a popup image
+    if (el.classList.contains('popup-img')) return;
+
     const rect = el.getBoundingClientRect();
     const offsetX = e.clientX - (rect.left + rect.width / 2);
     const offsetY = e.clientY - (rect.top + rect.height / 2);
