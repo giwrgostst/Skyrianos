@@ -1,0 +1,526 @@
+/* === RESET & BODY === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #EDE8D0;
+  color: #087848;
+  overflow-x: hidden;
+  animation: fullBreathingWater 10s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* === ANIMATIONS === */
+@keyframes fullBreathingWater {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(1.007) rotate(0.15deg); }
+  50%  { transform: scale(1.015) rotate(0deg); }
+  75%  { transform: scale(1.007) rotate(-0.15deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-2px) scale(1.005); }
+}
+
+@keyframes waveFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+@keyframes fadeInParallax {
+  from { transform: scale(1.05) translateY(20px); opacity: 0; }
+  to   { transform: scale(1)    translateY(0);    opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* === FLOATING ELEMENTS === */
+.main-header,
+.hero,
+.hero-menu,
+.content-row,
+.hero-img-container,
+.info-box,
+.skyrianos-logo {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+/* === HEADER === */
+.main-header {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+.skyrianos-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.skyrianos-logo:hover {
+  transform: translateY(-6px) scale(1.06);
+}
+.wave-icon svg {
+  animation: waveFloat 500ms ease-in-out infinite alternate;
+}
+.skyrianos-text {
+  font-family: 'Caveat', cursive;
+  font-size: 5.5rem;
+  color: #087848;
+}
+.tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  padding: 1rem;
+}
+
+/* === HERO === */
+.hero {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.hero-img-container {
+  width: 100%;
+  max-width: 1500px;
+  max-height: 900px;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.hero-img-container:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  animation: fadeInParallax 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* === MENU === */
+.hero-menu {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.hero-menu ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0 1rem;
+}
+.hero-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  max-width: 140px;      /* Όριο για κινητά */
+  text-align: center;
+  white-space: nowrap;   /* Δεν σπάει η λέξη */
+  background: #EDE8D0;
+  border: 2px solid #087848;
+  border-radius: 8px;
+  color: #087848;
+  font-weight: bold;
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block; /* ✅ πολύ σημαντικό ώστε να παραμένει compact */
+}
+.hero-menu li a:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  background: #fce9b5;
+}
+@media (max-width: 768px) {
+  .hero-menu ul {
+    display: flex;
+    flex-direction: row;    /* Οριζόντια */
+    flex-wrap: nowrap;
+    overflow-x: auto;       /* Να μπορείς να κάνεις scroll */
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+    justify-content: flex-start;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE 10+ */
+  }
+  .hero-menu ul::-webkit-scrollbar {
+    display: none;          /* Chrome, Safari */
+  }
+  .hero-menu li {
+    flex: 0 0 auto;
+  }
+  .hero-menu li a {
+    width: auto;            /* Να μη γίνεται 100% */
+    min-width: 110px;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* === INFO BOXES === */
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem 4rem;
+}
+.info-box {
+  width: 100%;
+  max-width: 320px;
+  padding: 1.2rem;
+  background: #EDE8D0;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.info-box.visible {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+.info-box:hover {
+  transform: translateY(-22px) scale(1.12);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+}
+.info-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+}
+.info-box h2 {
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  margin-bottom: 0.6rem;
+  font-family: 'Caveat', cursive;
+}
+.info-box p {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: #087848;
+  line-height: 1.6;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero-menu ul {
+    display: flex;
+    flex-direction: row;    /* Οριζόντια */
+    flex-wrap: nowrap;
+    overflow-x: auto;       /* Να μπορείς να κάνεις scroll */
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+    justify-content: flex-start;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE 10+ */
+  }
+
+  .popup-content {
+    width: 95%;
+    max-height: 85vh;
+    padding: 1rem;
+  }
+
+  .popup-img {
+    max-height: 220px;
+  }
+
+  .hero-img-container {
+    border-radius: 12px;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .arrow-btn,
+  .footer-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive font size για h2 */
+h2, .popup-content h2, .info-box h2 {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+}
+
+/* Touch-friendly buttons */
+.arrow-btn,
+.footer-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+}
+
+/* Popups να προσαρμόζονται σε μικρή οθόνη */
+.popup-content {
+  width: 95%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Avoid hover-only effects: Πρόσθεσε και active */
+.arrow-btn:active,
+.footer-button:active {
+  background: #fce9b5;
+  transform: scale(0.97);
+}
+@media (max-width: 768px) {
+  .content-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skyrianos-text {
+    font-size: 3.5rem;
+  }
+  .hero-img-container {
+    border-radius: 12px;
+  }
+}
+/* === Interaction Avoidance (Cursor Repel) === */
+.hero-img-container,
+.info-box,
+.skyrianos-logo,
+.hero-menu a {
+  will-change: transform;
+  transition: transform 0.25s ease;
+  pointer-events: auto;
+}
+/* === ΕΝΕΡΓΟΠΟΙΗΣΗ TRANSFORM ΣΕ ΟΛΑ ΤΑ ΣΤΟΙΧΕΙΑ === */
+body * {
+  will-change: transform;
+  transition: transform 0.25s ease;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  padding: 1rem;
+
+  /* ΝΕΟ: animation */
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+.footer-bar {
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  padding: 2rem 0 1rem;
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+.footer-bar.visible {
+  animation: slideInLeft 1s ease-out forwards;
+}
+.footer-button {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  background: #EDE8D0;
+  font-weight: bold;
+  color: #087848;
+  border: 2px solid #087848;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+.footer-button:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  background: #fce9b5;
+  cursor: pointer;
+}
+/* === HISTORY POPUP === */
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-content {
+  background: #faf6ed;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: absolute;
+  animation: popupSlide 0.4s ease-out;
+}
+
+.popup-content h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #087848;
+}
+
+.popup-content p,
+#foodDescription,
+#beachDescription {
+  font-size: 1.1rem;
+  color: #087848;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.popup-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.popup-text p {
+  font-size: 1.1rem;
+  color: #087848;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #087848;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.popup-close:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes popupSlide {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* === Popup ενεργοποίηση === */
+.popup-overlay.active {
+  display: flex;
+}
+.popup-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: #EDE8D0;
+  border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: #087848;
+  border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: #065f3a;
+}
+.beach-popup img {
+  transition: opacity 0.5s ease;
+}
+
+.sight-popup img {
+  transition: opacity 0.5s ease;
+}
+
+.popup-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.arrow-btn {
+  background: #EDE8D0;
+  color: #087848;
+  border: 2px solid #087848;
+  border-radius: 10px;
+  padding: 0.4rem 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  transition: all 0.3s ease;
+  animation: floatSoft 6s ease-in-out infinite;
+}
+.arrow-btn:hover {
+  background: #fce9b5;
+  transform: translateY(-5px) scale(1.05);
+}
+#beachDescription {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #087848;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+#beachPopup .popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.center-text {
+  text-align: center;
+}
+.footer-button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}

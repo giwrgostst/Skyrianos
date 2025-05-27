@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skyrianos - Discover the Beauty of Skyros</title>
+  <meta name="description" content="Skyrianos - Explore the magic of Skyros island through beaches, history, local food and carnival traditions.">
+  <meta name="keywords" content="Skyrianos, Skyros, Skyros island, beaches, carnival, Greek islands, Skyros travel guide">
+  <meta property="og:description" content="Explore Skyros with Skyrianos – where tradition, food and beaches meet authentic island culture.">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="skyrianos-logo">
+      <div class="skyrianos-text">Skyrianos</div>
+    </div>
+    <p class="tagline animated-tagline">Discover the Beauty of Skyros</p>
+  </header>
+
+  <!-- Κρυφός τίτλος SEO -->
+  <h1 style="display: none;">Skyrianos - Discover the Beauty of Skyros</h1>
+	
+  <!-- HERO IMAGE -->
+  <section class="hero">
+    <div class="hero-img-container">
+      <img src="images/1.png" alt="Skyros Aerial" class="hero-img"/>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <nav class="hero-menu">
+    <ul>
+      <li><a href="#history" id="openHistory">History</a></li>
+      <li><a href="#beaches" id="openBeaches">Beaches</a></li>
+      <li><a href="#food" id="openFood">Food</a></li>
+      <li><a href="#sights" id="openSights">Sights</a></li>
+      <li><a href="#carnival" id="openCarnival">Carnival</a></li>
+    </ul>
+  </nav>
+
+  <!-- INFO BOXES -->
+  <section class="content-row">
+    <div class="info-box">
+      <img src="images/2.png" alt="Agios Nikolaos" />
+      <h2>Welcome to Skyros</h2>
+      <p>Where history lives in stone and time stands still.</p>
+    </div>
+    <div class="info-box">
+      <img src="images/3.png" alt="Molos" />
+      <h2>Experience the Beaches</h2>
+      <p>Where golden sand meets the crystal waters of the Aegean.</p>
+    </div>
+    <div class="info-box">
+      <img src="images/4.png" alt="Ladopites" />
+      <h2>Enjoy Unique Flavours</h2>
+      <p>Where island tradition meets rich, homemade flavors.</p>
+    </div>
+    <div class="info-box">
+      <img src="images/5.png" alt="Carnival" />
+      <h2>The Spirit of Skyros</h2>
+      <p>Where ancient spirit returns in masks, music, and dance.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <button class="footer-button" id="backToTopBtn">Skyrianos 2025 ©</button>
+  </footer>
+
+  <!-- === HISTORY POPUP === -->
+  <div class="popup-overlay" id="historyPopup">
+    <div class="popup-content">
+      <button class="popup-close" id="closePopup">&times;</button>
+      <img src="images/6.png" alt="Skyros History" class="popup-img" />
+      <h2>History of Skyros</h2>
+      <div class="popup-text">
+        <p>
+          Skyros, the southernmost island of the Sporades, has been inhabited since the Neolithic era. It played a key role during the Mycenaean civilization and was mentioned by Homer as a place where Achilles was hidden before the Trojan War.
+        </p>
+        <p>
+          During classical antiquity, Skyros was under Athenian and later Macedonian rule. It experienced Roman and Byzantine influence and endured pirate attacks through the Middle Ages.
+        </p>
+        <p>
+          The island became part of modern Greece in the 19th century and continues to preserve its distinct cultural identity through its architecture, customs, and lively traditions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === BEACHES POPUP === -->
+  <div class="popup-overlay" id="beachesPopup">
+    <div class="popup-content beach-popup">
+      <button class="popup-close" id="closeBeaches">&times;</button>
+      <img src="images/beaches/molos.png" alt="Molos Beach" class="popup-img" id="beachImage" />
+      <h2 id="beachTitle">Molos</h2>
+      <p id="beachDescription">A long, organized beach near the town, perfect for swimming and sunbathing.</p>
+      <div class="popup-controls">
+        <button class="arrow-btn" id="prevBeach">&#8592;</button>
+        <button class="arrow-btn" id="nextBeach">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === FOOD POPUP === -->
+  <div class="popup-overlay" id="foodPopup">
+    <div class="popup-content beach-popup">
+      <button class="popup-close" id="closeFood">&times;</button>
+      <img src="images/food/16.png" alt="Food" class="popup-img" id="foodImage" />
+      <h2 id="foodTitle">Κατσικάκι Λεμονάτο με Πατάτες</h2>
+      <p id="foodDescription">
+        Παραδοσιακό φαγητό της Σκύρου με απίθανο άρωμα λεμονιού, μαγειρεμένο με πατάτες στον φούρνο ή την κατσαρόλα.
+      </p>
+      <div class="popup-controls">
+        <button class="arrow-btn" id="prevFood">&#8592;</button>
+        <button class="arrow-btn" id="nextFood">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === SIGHTS POPUP === -->
+  <div class="popup-overlay" id="sightsPopup">
+    <div class="popup-content sight-popup">
+      <button class="popup-close" id="closeSightsPopup">&times;</button>
+      <img id="sightImage" class="popup-img" src="" alt="Sight">
+      <h2 id="sightTitle">Sight</h2>
+      <div class="popup-text">
+        <p id="sightDesc" class="center-text">Sight description will appear here.</p>
+      </div>
+      <div class="popup-controls">
+        <button id="prevSight" class="arrow-btn">&larr;</button>
+        <button id="nextSight" class="arrow-btn">&rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === CARNIVAL POPUP === -->
+  <div class="popup-overlay" id="carnivalPopup">
+    <div class="popup-content">
+      <button class="popup-close" id="closeCarnivalPopup">&times;</button>
+      <img src="images/carnival.png" alt="Skyrian Carnival" class="popup-img" />
+      <h2>Skyrian Carnival</h2>
+      <div class="popup-text">
+        <p>
+          The Skyrian Carnival is one of the most unique and traditional events in Greece. Rooted in ancient Dionysian rituals, it brings the island to life with music, masks, and folklore.
+        </p>
+        <p>
+          The most iconic figures of the carnival are the "Geros" (old man), dressed in goat skins and heavy bells, and the "Korela", his wife, who follow a ritualistic path through the village.
+        </p>
+        <p>
+          Lasting for several weeks, the festival combines theatrical elements, satire, dancing, and spontaneous performances that celebrate Skyros’ distinct cultural identity.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
