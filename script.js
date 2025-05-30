@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Kalamitsa',
       img: 'images/beaches/kalamitsa.png',
-      desc: 'A peaceful sandy beach ideal for families and calm swimming.'
+      desc: 'A peaceful rocky beach ideal for families and calm swimming.'
     },
     {
       title: 'Agalipa',
       img: 'images/beaches/agalipa.png',
-      desc: 'A hidden gem only accessible by boat, with crystal clear water.'
+      desc: 'A hidden gem, with crystal clear water.'
     },
     {
       title: 'Pefko',
       img: 'images/beaches/pefko.png',
-      desc: 'A secluded beach surrounded by rocks and nature, perfect for relaxing.'
+      desc: 'A secluded beach surrounded nature, perfect for relaxing.'
     }
   ];
 
