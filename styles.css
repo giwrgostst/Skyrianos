@@ -77,6 +77,7 @@ body {
   font-family: 'Caveat', cursive;
   font-size: 5.5rem;
   color: #087848;
+  padding: 0 0.8rem;
 }
 .tagline {
   font-family: 'Caveat', cursive;
@@ -294,6 +295,7 @@ h2, .popup-content h2, .info-box h2 {
   }
   .skyrianos-text {
     font-size: 3.5rem;
+    padding-right: 1rem;
   }
   .hero-img-container {
     border-radius: 12px;
