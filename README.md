@@ -37,12 +37,14 @@ This is a lightweight, responsive single-page website designed to showcase the u
 
 This project is automatically deployed via Netlify from the main branch of this repository.
 
-📬 Contact  
+---
+
+## 📬 Contact  
 If you want to contribute or suggest something, feel free to open an issue.
 
-© License  
-This project is open for personal use. Commercial reuse of content (texts, images) is not allowed without permission.
+---
 
-From Skyros with ❤️
+## © License  
+This project is open for personal use. Commercial reuse of content (texts, images) is not allowed without permission.
 
 ---
